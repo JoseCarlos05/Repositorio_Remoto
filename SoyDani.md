@@ -1,5 +1,0 @@
-# Repositorio_Remoto
-Prueba
-print("Prueba de print")
-
-print('Espabila Gus')
