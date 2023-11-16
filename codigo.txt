@@ -1,0 +1,50 @@
+import random
+contador = 0
+def lanzar_dado():
+    return random.randint(1, 6)
+
+def mostrar_dado(valor):
+    print(" -------")
+    if valor == 1:
+        print("|       |")
+        print("|   *   |")
+        print("|       |")
+    elif valor == 2:
+        print("| *     |")
+        print("|       |")
+        print("|     * |")
+    elif valor == 3:
+        print("| *     |")
+        print("|   *   |")
+        print("|     * |")
+    elif valor == 4:
+        print("| *   * |")
+        print("|       |")
+        print("| *   * |")
+    elif valor == 5:
+        print("| *   * |")
+        print("|   *   |")
+        print("| *   * |")
+    else:
+        print("| *   * |")
+        print("| *   * |")
+        print("| *   * |")
+    print(" -------")
+
+dados = []
+while True:
+    try:
+      tiradas = int(input("Introduce el numero de tiradas (0 para finalizar el programa): "))
+      if tiradas == 0:
+          dados.sort()
+          print(', '.join(map(str, dados)))
+          break
+      else:
+          for i in range(tiradas):
+              contador +=1
+              print(f"El dado numero {contador} ha  generado aleatoriamente un:")
+              valor = lanzar_dado()
+              dados.append(valor)
+              mostrar_dado(valor)
+    except ValueError:
+        print("Por favor, introduce un número válido.")
